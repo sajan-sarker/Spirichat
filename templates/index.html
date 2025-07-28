@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SPIRICHAT</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="chat-container">
+    <!-- Header -->
+    <div class="chat-header">
+      <div class="chatbot-avatar"></div>
+      <div>
+        <h2>SPIRICHAT</h2>
+        <p>Ask me about Ghost!</p>
+      </div>
+    </div>
+
+    <!-- Chat Body -->
+    <div class="chat-body" id="chat-body">
+      <div class="message bot">
+        <div class="bot-avatar"></div>
+        <div class="bubble">Let's explore the Supernatural!</div>
+        <span class="timestamp">{{ now.strftime('%H:%M') if now else '13:28' }}</span>
+      </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="chat-input">
+      <input type="text" id="chat-input" placeholder="Type a message..." />
+      <button onclick="sendMessage()">➤</button>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
